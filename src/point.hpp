@@ -1,6 +1,6 @@
 #pragma once
 
-#include <string>
+#include <iostream>
 
 class Point
 {
@@ -15,9 +15,10 @@ public:
         double get_y();
 
         void print();
-
-        //distance between 2 points
-        double operator-(Point &other);
-
-        Point operator/(Point &other);
+        
+        double operator - (Point &other); //distance between 2 points
+        Point operator / (Point &other);  //midpoint of 2 points
+        bool operator == (Point &other);  //checks if the 2 points are equal
+        bool operator != (Point &other);  //checks if the 2 points are diffrent
+        friend std::ostream &operator<<(std::ostream &ostream, Point point);  //streams the point to console
 };

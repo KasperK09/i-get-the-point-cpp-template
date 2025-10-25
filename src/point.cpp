@@ -33,3 +33,20 @@ Point Point::operator/(Point &other)
 
    return Point(midpoint_x, midpoint_y);
 }
+
+bool Point::operator == (Point &other)
+{
+   return (x == other.x) && (y == other.y);
+}
+
+bool Point::operator != (Point &other)
+{
+   return !(*this == other);
+}
+
+std::ostream &operator<<(std::ostream &ostream, Point point)
+{
+   ostream << "(" << point.x << ", " << point.y << ")";
+   
+   return ostream;
+}
